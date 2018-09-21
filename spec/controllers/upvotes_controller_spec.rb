@@ -17,7 +17,7 @@ describe "POST upvote" do
       expect(res["vote_count"]).to eq 1
     end
 
-    it "Creates an upvote for an alarm and sets vote count to 1" do
+    it "Creates an upvote for an alarm and sets vote count to 2 if posted twice" do
 
       post "/alarms/#{alarm_2.id}/upvotes.json"
 
