@@ -4,7 +4,7 @@ class AlarmsController < ApplicationController
   # GET /alarms
   # GET /alarms.json
   def index
-    @alarms = Alarm.all.order('created_at DESC')
+    @alarms = Alarm.all.order('created_at DESC').includes(:upvote)
   end
 
   # GET /alarms/1

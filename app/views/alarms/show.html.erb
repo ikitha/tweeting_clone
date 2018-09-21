@@ -8,8 +8,11 @@
   <strong>Message:</strong>
   </br>
   <%= @alarm.message %>
+
   <%= link_to alarm_upvotes_path(@alarm), :method=> :post do%>
-      <i class="far fa-arrow-alt-circle-up"></i>
+    <i class="far fa-arrow-alt-circle-up">
+      <%= @alarm.upvote.present? ? @alarm.upvote.vote_count : 0 %>
+    </i>
   <% end %>
 </p>
 

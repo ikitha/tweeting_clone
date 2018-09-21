@@ -1,5 +1,5 @@
 class Alarm < ApplicationRecord
-  has_many :upvotes, dependent: :delete_all
+  has_one :upvote, dependent: :destroy
 
   validates :message, presence: true
   before_save :upcase_message
